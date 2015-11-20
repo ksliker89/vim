@@ -1,10 +1,16 @@
-"This is a simple .vimrc file. There are a lot of samples on the web but you shouldn't put anything
-" in your .vimrc files without knowing exactly what it does.
-
 ":highlight turns on syntax highlighting
 " ctermbg is background color
 " ctermfg is foreground color
-:highlight Normal ctermbg=white ctermfg=black 
+":highlight Normal ctermbg=black ctermfg=grey
+
+
+
+"to enable 256 colors
+set t_Co=256
+
+"turn on syntax highlighting
+syntax enable
+set background=dark
 
 "set number gives you permanent numbers down the left side of your editor
 " this is nice to have so you can jump lines with ease.
@@ -18,7 +24,13 @@ set autoindent
 " with Tab. 
 set wildmenu
 
+"specific to file type indentation"
+filetype plugin indent on
+
+"specific to masm, nasm, tasm assembly syntax highlighting"
+"set: ft=nasm or set:ft=masm"
+
 "set spell slpelllang gives you the ability to spell check your comments.
 " This does not highlight code syntax errors. It even highlights words
 " different colors based on what the error is. For example, spelling, punctuation, etc..
-set spell spelllang=en_us
+"set spell spelllang=en_us
