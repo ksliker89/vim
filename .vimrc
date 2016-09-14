@@ -3,14 +3,17 @@
 " ctermfg is foreground color
 ":highlight Normal ctermbg=black ctermfg=grey
 
+"set syntax based on file extension
+autocmd BufNewFile,BufReadPost *.lhm set filetype=lisp.lisp
+autocmd BufNewFile,BufReadPost *.cpp set filetype=cpp.cpp
 
 
 "to enable 256 colors
-set t_Co=256
+"set t_Co=256
 
 "turn on syntax highlighting
 syntax enable
-set background=dark
+"set background=dark
 
 "set number gives you permanent numbers down the left side of your editor
 " this is nice to have so you can jump lines with ease.
