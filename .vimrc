@@ -3,6 +3,18 @@ execute pathogen#infect()
 "*************************************
 syntax enable "enable sytax processing
 
+
+"********leader shortcuts************
+"************************************
+"leader is comma
+let mapleader="," 
+"toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
+"save current session windows
+nnoremap <leader>s :mksession<CR> 
+" vim -S to repopen saved session
+
+
 "**********NERDTree******************
 "*************************************
 autocmd vimenter * NERDTree
@@ -11,36 +23,54 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "********spaces and tabs*************
 "************************************
-set tabstop=4  "number of visual spaces per TAB
-set softtabstop=4 "number of spaces in tab when editing
-set expandtab "tabs are spaces
+set tabstop=4  
+"number of visual spaces per TAB
+set softtabstop=4 
+"number of spaces in tab when editing
+set expandtab 
+"tabs are spaces
 
 
 "*******UI config********************
 "************************************
-set number "show line numbers
-set showcmd "show command in bottom bar
-set cursorline "highlight current line
-filetype indent on "load filetype-specific indent files
-set wildmenu "visual autocomplete for command menu
-set lazyredraw "redraw only when we need to
-set showmatch "highlight matching brackets 
+set number 
+"show line numbers
+set showcmd 
+"show command in bottom bar
+set cursorline 
+"highlight current line
+filetype indent on 
+"load filetype-specific indent files
+set wildmenu 
+"visual autocomplete for command menu
+set lazyredraw 
+"redraw only when we need to
+set showmatch 
+"highlight matching brackets 
 
 
 "**********searching*****************
 "************************************
-set incsearch "search as characters are entered
-set hlsearch "highlight matches
-nnoremap <leader><space> :nohlsearch<CR> "turns of highlighted words with spacebar
+set incsearch 
+"search as characters are entered
+set hlsearch 
+"highlight matches
+nnoremap <leader><space> :nohlsearch<CR> 
+"turns of highlighted words with spacebar
 
 
 "*************folding****************
 "************************************
-set foldenable "enable folding
-set foldlevelstart=10 "open most folds by default
-set foldnestmax=10 "10 nested fold max
-nnoremap <space> za "space open/close folds
-set foldmethod=indent "fold based on indent level
+set foldenable 
+"enable folding
+set foldlevelstart=10 
+"open most folds by default
+set foldnestmax=2 
+"10 nested fold max
+nnoremap <space> za 
+"space open/close folds
+set foldmethod=syntax 
+"fold based on indent level
 
 
 "************movement****************
@@ -50,17 +80,6 @@ nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 "highlight last inserted text
 nnoremap gV `[v`] 
-
-
-"********leader shortcuts************
-"************************************
-"leader is comma
-let mapleader=',' 
-"toggle gundo
-nnoremap <leader>u :GundoToggle<CR>
-"save current session windows
-nnoremap <leader>s :mksession<CR> 
-" vim -S to repopen saved session
 
 
 "*********tmux***********************
@@ -107,7 +126,8 @@ augroup END
 
 "*************backups**************
 "**********************************
-set backup "this moves backups to tmp folder
+set backup 
+"this moves backups to tmp folder
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
